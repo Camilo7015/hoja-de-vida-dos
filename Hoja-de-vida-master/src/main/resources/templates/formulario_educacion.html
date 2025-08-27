@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario Educación</title>
+</head>
+<body>
+    <h1>Agregar / Editar Educación</h1>
+    <form th:action="@{/educaciones/guardar}" th:object="${educacion}" method="post">
+        <input type="hidden" th:field="*{idEducacion}" />
+        <label>Institución:</label>
+        <input type="text" th:field="*{institucion}" required />
+        <br/>
+        <label>Título:</label>
+        <input type="text" th:field="*{titulo}" required />
+        <br/>
+        <label>Fecha Inicio:</label>
+        <input type="date" th:field="*{fechaInicio}" />
+        <br/>
+        <label>Fecha Fin:</label>
+        <input type="date" th:field="*{fechaFin}" />
+        <br/>
+        <!-- Aquí seleccionamos la persona a la que pertenece -->
+        <label>Persona:</label>
+        <select th:field="*{persona.idPersona}">
+            <option th:each="persona : ${personas}" th:value="${persona.idPersona}" th:text="${persona.nombre} + ' ' + ${persona.apellido}"></option>
+        </select>
+        <br/>
+        <button type="submit">Guardar</button>
+    </form>
+    <a th:href="@{/educaciones/lista}">Volver a la lista</a>
+</body>
+</html>

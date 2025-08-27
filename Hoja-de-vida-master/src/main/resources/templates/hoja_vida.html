@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hoja de Vida - Programador Java</title>
+    <style>
+        /* Reset y tipografía */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #777;
+        }
+
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 6px;
+            margin-bottom: 15px;
+        }
+
+        /* Datos personales */
+        .info-personal {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .info-personal div {
+            margin-bottom: 10px;
+            width: 48%;
+        }
+
+        /* Experiencia y educación */
+        .item {
+            margin-bottom: 15px;
+        }
+
+        .item h3 {
+            color: #222;
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+        }
+
+        .item span {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .item p {
+            margin-top: 6px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        /* Habilidades */
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skills-list li {
+            background: #4CAF50;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Contacto */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media(max-width: 600px){
+            .info-personal div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Juan Pérez</h1>
+            <p>Programador Java Full Stack</p>
+        </header>
+
+        <section class="info-personal">
+            <div><strong>Email:</strong> juan.perez@email.com</div>
+            <div><strong>Teléfono:</strong> +57 300 123 4567</div>
+            <div><strong>Ubicación:</strong> Bogotá, Colombia</div>
+            <div><strong>LinkedIn:</strong> linkedin.com/in/juanperez</div>
+        </section>
+
+        <section>
+            <h2>Perfil Profesional</h2>
+            <p>Desarrollador Java con más de 5 años de experiencia en aplicaciones empresariales, especializado en backend con Spring Boot y bases de datos relacionales. Apasionado por el desarrollo eficiente, el trabajo en equipo y la mejora continua.</p>
+        </section>
+
+        <section>
+            <h2>Experiencia Laboral</h2>
+
+            <div class="item">
+                <h3>Desarrollador Java Senior - Tech Solutions S.A.</h3>
+                <span>Marzo 2020 - Actualidad | Bogotá, Colombia</span>
+                <p>Diseño y desarrollo de microservicios con Spring Boot, integración con APIs REST, optimización de bases de datos MySQL y PostgreSQL, trabajo con Docker y CI/CD.</p>
+            </div>
+
+            <div class="item">
+                <h3>Programador Java - SoftWare House Ltda.</h3>
+                <span>Junio 2017 - Febrero 2020 | Bogotá, Colombia</span>
+                <p>Participación en proyectos web utilizando Java EE, JSP, servlets y JSF. Mantenimiento y desarrollo de funcionalidades para clientes del sector financiero.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Educación</h2>
+
+            <div class="item">
+                <h3>Ingeniería de Sistemas</h3>
+                <span>Universidad Nacional de Colombia | 2012 - 2017</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Habilidades Técnicas</h2>
+            <ul class="skills-list">
+                <li>Java</li>
+                <li>Spring Boot</li>
+                <li>Hibernate</li>
+                <li>REST APIs</li>
+                <li>MySQL / PostgreSQL</li>
+                <li>Git</li>
+                <li>Docker</li>
+                <li>CI/CD</li>
+                <li>JUnit</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Disponible para trabajar remoto o presencial. Referencias disponibles a solicitud.</p>
+        </footer>
+    </div>
+</body>
+</html>

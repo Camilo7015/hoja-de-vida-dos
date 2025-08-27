@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulario Experiencia Laboral</title>
+</head>
+<body>
+    <h1>Agregar / Editar Experiencia Laboral</h1>
+    <form th:action="@{/experiencias/guardar}" th:object="${experienciaLaboral}" method="post">
+        <input type="hidden" th:field="*{idExperiencia}" />
+        <label>Empresa:</label>
+        <input type="text" th:field="*{empresa}" required />
+        <br/>
+        <label>Cargo:</label>
+        <input type="text" th:field="*{cargo}" required />
+        <br/>
+        <label>Descripción:</label>
+        <textarea th:field="*{descripcion}"></textarea>
+        <br/>
+        <label>Fecha Inicio:</label>
+        <input type="date" th:field="*{fechaInicio}" />
+        <br/>
+        <label>Fecha Fin:</label>
+        <input type="date" th:field="*{fechaFin}" />
+        <br/>
+        <label>Persona:</label>
+        <select th:field="*{persona.idPersona}">
+            <option th:each="persona : ${personas}" th:value="${persona.idPersona}" th:text="${persona.nombre} + ' ' + ${persona.apellido}"></option>
+        </select>
+        <br/>
+        <button type="submit">Guardar</button>
+    </form>
+    <a th:href="@{/experiencias/lista}">Volver a la lista</a>
+</body>
+</html>

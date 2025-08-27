@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Experiencia Laboral</title>
+</head>
+<body>
+    <h1>Lista de Experiencia Laboral</h1>
+    <a th:href="@{/experiencias/nuevo}">Nueva Experiencia</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Empresa</th>
+                <th>Cargo</th>
+                <th>Descripción</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Persona</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="exp : ${experiencias}">
+                <td th:text="${exp.empresa}"></td>
+                <td th:text="${exp.cargo}"></td>
+                <td th:text="${exp.descripcion}"></td>
+                <td th:text="${exp.fechaInicio}"></td>
+                <td th:text="${exp.fechaFin}"></td>
+                <td th:text="${exp.persona.nombre} + ' ' + ${exp.persona.apellido}"></td>
+                <td>
+                    <a th:href="@{'/experiencias/editar/' + ${exp.idExperiencia}}">Editar</a> |
+                    <a th:href="@{'/experiencias/eliminar/' + ${exp.idExperiencia}}" onclick="return confirm('¿Seguro que deseas eliminar?');">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/personas/lista}">Volver a Personas</a>
+</body>
+</html>

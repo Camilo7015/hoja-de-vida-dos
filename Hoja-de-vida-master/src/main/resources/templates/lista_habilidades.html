@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Habilidades</title>
+</head>
+<body>
+    <h1>Lista de Habilidades</h1>
+    <a th:href="@{/habilidades/nuevo}">Nueva Habilidad</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Habilidad</th>
+                <th>Nivel</th>
+                <th>Persona</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hab : ${habilidades}">
+                <td th:text="${hab.habilidad}"></td>
+                <td th:text="${hab.nivel}"></td>
+                <td th:text="${hab.persona.nombre} + ' ' + ${hab.persona.apellido}"></td>
+                <td>
+                    <a th:href="@{'/habilidades/editar/' + ${hab.idHabilidad}}">Editar</a> |
+                    <a th:href="@{'/habilidades/eliminar/' + ${hab.idHabilidad}}" onclick="return confirm('¿Seguro que deseas eliminar?');">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/personas/lista}">Volver a Personas</a>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Educaciones</title>
+</head>
+<body>
+<h1>Educaciones</h1>
+<ul>
+    <li th:each="educacion : ${educaciones}" th:text="${educacion.nombre}">Nombre Educacion</li>
+</ul>
+<a href="/educaciones/nuevo">Agregar Nueva Educacion</a>
+</body>
+</html>

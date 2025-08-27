@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio | Hoja de Vida</title>
+  <style>
+    :root {
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --brand:#10b981;
+      --brand-2:#22d3ee;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(135deg,var(--bg),#030712);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:var(--text)}
+    header{padding:28px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1f2937;background:#0b1220ba;backdrop-filter:blur(10px);position:sticky;top:0}
+    .brand{font-weight:700;letter-spacing:.4px}
+    .brand span{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+    .card{background:linear-gradient(180deg,#0b1220,#0a0f1a);border:1px solid #1f2937;border-radius:16px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 8px 0;font-size:18px}
+    .card p{margin:0 0 12px 0;color:var(--muted);font-size:14px;line-height:1.4}
+    a.btn{display:inline-block;text-decoration:none;border:1px solid #334155;padding:10px 12px;border-radius:10px;font-weight:600}
+    a.btn:hover{border-color:#475569}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    footer{margin-top:34px;padding:20px;text-align:center;color:#94a3b8;font-size:12px}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:center}
+    .hero .panel{background:linear-gradient(180deg,#0b1220,#0a0f1a);border:1px solid #1f2937;border-radius:16px;padding:24px}
+    .hero h1{margin:0 0 8px 0;font-size:28px}
+    .hero p{margin:0;color:#cbd5e1}
+    @media (max-width:800px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">Hoja de Vida <span>Spring Boot</span></div>
+  <nav class="row">
+    <a class="btn" href="/cv">Ver CV</a>
+    <a class="btn" href="/personas/lista">Personas</a>
+    <a class="btn" href="/educaciones/lista">Educación</a>
+    <a class="btn" href="/experiencia/lista">Experiencia</a>
+    <a class="btn" href="/habilidad/lista">Habilidades</a>
+  </nav>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="panel">
+      <h1>Bienvenido 👋</h1>
+      <p>Este es tu panel principal. Desde aquí puedes crear y consultar toda la información de tu CV.</p>
+      <div class="row" style="margin-top:12px">
+        <a class="btn" href="/personas/nuevo">Nueva persona</a>
+        <a class="btn" href="/educaciones/nuevo">Nueva educación</a>
+        <a class="btn" href="/experiencia/nuevo">Nueva experiencia</a>
+        <a class="btn" href="/habilidad/nuevo">Nueva habilidad</a>
+      </div>
+    </div>
+    <div class="panel">
+      <h3 style="margin-top:0">Accesos rápidos</h3>
+      <div class="grid">
+        <div class="card">
+          <h3>CV público</h3>
+          <p>Vista lista para compartir.</p>
+          <a class="btn" href="/cv">Abrir</a>
+        </div>
+        <div class="card">
+          <h3>Personas</h3>
+          <p>Crear, editar y listar personas.</p>
+          <div class="row">
+            <a class="btn" href="/personas/nuevo">Nuevo</a>
+            <a class="btn" href="/personas/lista">Lista</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Educación</h3>
+          <p>Formación académica.</p>
+          <div class="row">
+            <a class="btn" href="/educaciones/nuevo">Nuevo</a>
+            <a class="btn" href="/educaciones/lista">Lista</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Experiencia</h3>
+          <p>Historial laboral.</p>
+          <div class="row">
+            <a class="btn" href="/experiencia/nuevo">Nuevo</a>
+            <a class="btn" href="/experiencia/lista">Lista</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Habilidades</h3>
+          <p>Tecnologías y niveles.</p>
+          <div class="row">
+            <a class="btn" href="/habilidad/nuevo">Nuevo</a>
+            <a class="btn" href="/habilidad/lista">Lista</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>Hecho con Spring Boot + Thymeleaf</footer>
+</div>
+</body>
+</html>
