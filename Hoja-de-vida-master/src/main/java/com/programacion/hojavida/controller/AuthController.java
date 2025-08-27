@@ -15,13 +15,15 @@ public class AuthController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public String loginForm() {
-        return "login"; // templates/login.html
+        return "login";
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+    public String login(@RequestParam String username,
+                        @RequestParam String password,
+                        Model model) {
         Optional<Usuario> usuario = usuarioService.login(username, password);
         if (usuario.isPresent()) {
             model.addAttribute("usuario", usuario.get());
@@ -34,11 +36,13 @@ public class AuthController {
 
     @GetMapping("/registro")
     public String registerForm() {
-        return "registro"; // templates/registro.html
+        return "registro";
     }
 
     @PostMapping("/registro")
-    public String register(@RequestParam String username, @RequestParam String password, Model model) {
+    public String register(@RequestParam String username,
+                           @RequestParam String password,
+                           Model model) {
         usuarioService.registrar(username, password);
         model.addAttribute("mensaje", "Usuario registrado con éxito");
         return "login";
